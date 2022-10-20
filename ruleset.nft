@@ -1,0 +1,7 @@
+# Translated by iptables-restore-translate v1.8.7 on Thu Oct 20 13:17:03 2022
+add table ip filter
+add chain ip filter INPUT { type filter hook input priority 0; policy drop; }
+add chain ip filter FORWARD { type filter hook forward priority 0; policy drop; }
+add chain ip filter OUTPUT { type filter hook output priority 0; policy accept; }
+add rule ip filter INPUT ct state new,established  counter accept
+
